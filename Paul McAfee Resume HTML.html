@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paul McAfee | Executive Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --panel: #121520;
+      --text: #f4f1e7;
+      --muted: #b3af9f;
+      --gold: #c9a84c;
+      --gold-soft: rgba(201, 168, 76, 0.35);
+      --line: rgba(201, 168, 76, 0.3);
+      --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 10%, #171b29 0%, var(--bg) 40%, #0a0c11 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(rgba(255, 255, 255, 0.04) 0.5px, transparent 0.5px),
+        radial-gradient(rgba(0, 0, 0, 0.2) 0.7px, transparent 0.7px);
+      background-size: 3px 3px, 4px 4px;
+      background-position: 0 0, 1px 1px;
+      mix-blend-mode: soft-light;
+      opacity: 0.38;
+      z-index: -1;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, #d9bb66, var(--gold));
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
+      z-index: 2000;
+      transition: width 0.08s linear;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1500;
+      backdrop-filter: blur(10px);
+      background: rgba(13, 15, 20, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.15rem 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .name-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .site-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.7rem, 3.1vw, 2.65rem);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 0.95;
+      white-space: nowrap;
+    }
+
+    .site-name-underline {
+      width: 82%;
+      max-width: 320px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 24%, var(--gold) 78%, transparent 100%);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.77rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.42rem 0.62rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    nav a.is-active {
+      color: var(--text);
+      border-color: rgba(201, 168, 76, 0.5);
+      background: rgba(201, 168, 76, 0.12);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--text);
+      border-color: var(--gold-soft);
+      background: rgba(201, 168, 76, 0.08);
+      outline: none;
+    }
+
+    .download-btn {
+      text-decoration: none;
+      color: var(--gold);
+      border: 1px solid var(--gold-soft);
+      padding: 0.42rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      margin-left: 0.2rem;
+    }
+
+    .download-btn:hover,
+    .download-btn:focus-visible {
+      background: var(--gold);
+      color: #101216;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.6rem 4rem;
+    }
+
+    .hero {
+      padding: 2.2rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.15rem, 4.1vw, 3.9rem);
+      line-height: 1.06;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.1rem;
+      color: #f8f6f1;
+      max-width: 18ch;
+    }
+
+    .title-stack {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .title-stack li {
+      border: 1px solid var(--gold-soft);
+      color: #e8ddc0;
+      border-radius: 999px;
+      padding: 0.38rem 0.8rem;
+      font-size: 0.79rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: staggerFade 0.7s ease forwards;
+      background: rgba(201, 168, 76, 0.06);
+    }
+
+    .title-stack li:nth-child(1) { animation-delay: 0.18s; }
+    .title-stack li:nth-child(2) { animation-delay: 0.32s; }
+    .title-stack li:nth-child(3) { animation-delay: 0.46s; }
+    .title-stack li:nth-child(4) { animation-delay: 0.60s; }
+    .title-stack li:nth-child(5) { animation-delay: 0.74s; }
+
+    @keyframes staggerFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 112px;
+      align-self: start;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.01), rgba(201, 168, 76, 0.05));
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 14px;
+      padding: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar h3,
+    .content h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.65rem;
+    }
+
+    .sidebar h3 {
+      font-size: 1.08rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-list li {
+      color: #ded8c5;
+      font-size: 0.9rem;
+      padding: 0.42rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.16);
+      word-break: break-word;
+    }
+
+    .contact-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-list strong {
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-list a {
+      color: #dfd6bc;
+      text-decoration: none;
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--gold);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .section {
+      margin-bottom: 2.1rem;
+      scroll-margin-top: 120px;
+    }
+
+    .section h2 {
+      font-size: clamp(1.6rem, 2.15vw, 1.95rem);
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 0.9rem 0 1.1rem;
+    }
+
+    .lead {
+      font-size: clamp(1rem, 1.15vw, 1.08rem);
+      color: #ece8db;
+      max-width: 82ch;
+    }
+
+    .expertise-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(201, 168, 76, 0.34);
+      color: #e8dec0;
+      padding: 0.36rem 0.66rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 1rem;
+      padding-left: 1.35rem;
+      border-left: 1px solid rgba(201, 168, 76, 0.42);
+    }
+
+    .experience-card {
+      position: relative;
+      margin-bottom: 1.45rem;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.01), rgba(201, 168, 76, 0.04));
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 12px;
+      padding: 1rem 1rem 1rem 1.05rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.72s ease, transform 0.72s ease, border-color 0.45s ease;
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      left: -1.83rem;
+      top: 1.28rem;
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.12);
+    }
+
+    .experience-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .experience-card:hover {
+      border-color: rgba(201, 168, 76, 0.45);
+    }
+
+    .experience-header {
+      margin-bottom: 0.55rem;
+    }
+
+    .company {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #f7f3e5;
+      line-height: 1.15;
+    }
+
+    .role {
+      color: #ddd5bf;
+      font-size: 0.93rem;
+      letter-spacing: 0.015em;
+      margin-top: 0.18rem;
+    }
+
+    .meta {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.71rem;
+      margin-top: 0.2rem;
+    }
+
+    .subnote {
+      color: #bcb7a6;
+      font-size: 0.86rem;
+      font-style: italic;
+      margin-bottom: 0.45rem;
+    }
+
+    .experience-card ul {
+      margin-left: 1rem;
+      display: grid;
+      gap: 0.36rem;
+    }
+
+    .experience-card li {
+      color: #e4dfd0;
+      font-size: 0.93rem;
+    }
+
+    .footline {
+      margin-top: 2rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      color: #a8a292;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 950px) {
+      .header-inner {
+        justify-content: center;
+      }
+
+      .name-wrap {
+        width: 100%;
+        align-items: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        padding-top: 0.9rem;
+      }
+
+      .container {
+        padding: 1.2rem 1rem 2.6rem;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .hero {
+        padding-top: 1.35rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .timeline {
+        padding-left: 1rem;
+      }
+
+      .experience-card::before {
+        left: -1.46rem;
+      }
+
+      .title-stack li {
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+      }
+
+      .experience-card li {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .progress-bar,
+      .experience-card,
+      .title-stack li {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .experience-card {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="name-wrap">
+        <div class="site-name">PAUL McAFEE</div>
+        <div class="site-name-underline"></div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#summary">Summary</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="download-btn" href="#">Download PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="kicker">Executive Profile</span>
+      <h1>Commercial Growth Leadership Across Global Platforms</h1>
+      <ul class="title-stack" aria-label="Title stack">
+        <li>CEO</li>
+        <li>President</li>
+        <li>CRO</li>
+        <li>E-commerce Director</li>
+        <li>Head of Business Development</li>
+      </ul>
+    </section>
+
+    <div class="layout">
+      <aside class="sidebar section" id="contact">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li><strong>Name:</strong> Paul McAfee</li>
+          <li><strong>Location:</strong> New York</li>
+          <li><strong>Phone:</strong> 773.550.3380</li>
+          <li><strong>Email:</strong> <a href="mailto:Paul.Mcafee47@gmail.com">Paul.Mcafee47@gmail.com</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/paul-mcafee-88b04b34" target="_blank" rel="noopener noreferrer">linkedin.com/in/paul-mcafee-88b04b34</a></li>
+        </ul>
+        <h3>Areas of Expertise</h3>
+        <div class="expertise-grid" aria-label="Expertise tags">
+          <span class="tag">Sales/Business Development</span>
+          <span class="tag">Strategic Planning</span>
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Deal Structuring / Negotiation</span>
+          <span class="tag">Go-To-Market Strategies</span>
+          <span class="tag">Corporate Development</span>
+          <span class="tag">P&amp;L Responsibility</span>
+          <span class="tag">Marketplace / Wholesale</span>
+          <span class="tag">E-Commerce / DTC / Retail</span>
+          <span class="tag">Licensing / Partnerships</span>
+          <span class="tag">Merchandising / Purchasing</span>
+        </div>
+      </aside>
+
+      <section class="content">
+        <section class="section" id="summary">
+          <h2>Summary</h2>
+          <hr />
+          <p class="lead">
+            Commercial leader with 20+ years building and scaling partnerships across marketplaces, digital, and technology ecosystems.
+            Proven track record creating pipeline from zero, structuring complex multi-party deals, and driving adoption through high-leverage partners.
+            Owns the full business development lifecycle — strategy, sourcing, negotiation, and execution — while aligning cross-functional teams to deliver measurable growth.
+            Experienced operating across global brands and platform environments, with a focus on scaling distribution, unlocking partner-led revenue, and building repeatable growth engines.
+          </p>
+        </section>
+
+        <section class="section" id="expertise">
+          <h2>Areas of Expertise</h2>
+          <hr />
+          <div class="expertise-grid">
+            <span class="tag">Sales/Business Development</span>
+            <span class="tag">Strategic Planning</span>
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Deal Structuring / Negotiation</span>
+            <span class="tag">Go-To-Market Strategies</span>
+            <span class="tag">Corporate Development</span>
+            <span class="tag">P&amp;L Responsibility</span>
+            <span class="tag">Marketplace / Wholesale</span>
+            <span class="tag">E-Commerce / DTC / Retail</span>
+            <span class="tag">Licensing / Partnerships</span>
+            <span class="tag">Merchandising / Purchasing</span>
+          </div>
+        </section>
+
+        <section class="section" id="experience">
+          <h2>Professional Experience</h2>
+          <hr />
+          <div class="timeline">
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Amazon</div>
+                <div class="role">Principal Business Development &amp; Strategic Partnerships - Retail</div>
+                <div class="meta">Dec 2024 – Present, New York</div>
+              </header>
+              <ul>
+                <li>Lead BD and strategic partnerships, driving acquisition of high-value brands to expand selection, unlock new revenue streams, and support profitable category growth</li>
+                <li>Built and converted a ~$250M GMS strategic pipeline within first year</li>
+                <li>Own end-to-end deal lifecycle: origination, partner strategy, commercial structuring, negotiation, and launch across 1P/3P and hybrid marketplace models</li>
+                <li>Structure complex agreements across pricing, margin architecture, co-investment, inventory, and multi-year terms</li>
+                <li>Act as central point of coordination across product, finance, legal, operations, and marketing</li>
+                <li>Lead consultative engagements with Tier 1 partners, translating business needs into scalable marketplace and platform solutions</li>
+                <li>Developed repeatable frameworks for partner evaluation, onboarding, and performance management</li>
+                <li>Operate across a broader Amazon ecosystem (retail, ads, and AWS-cloud-adjacent initiatives)</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Velo USA</div>
+                <div class="role">CEO &amp; President</div>
+                <div class="meta">Nov 2022 – Aug 2024, Denver</div>
+              </header>
+              <p class="subnote">PE-backed holding company for two e-commerce retailers (Sterling Partners)</p>
+              <ul>
+                <li>Led turnaround returning business to profitability within 13 months through margin expansion (26% → 36%)</li>
+                <li>Built and scaled commercial partnerships delivering 5× growth in run-rate partner revenue, generating $3M profit in a single quarter</li>
+                <li>Reduced annual costs by $5M through vendor renegotiation, systems optimization, and operational consolidation</li>
+                <li>Secured $4M recapitalization, aligning investors around a multi-year growth strategy</li>
+                <li>Rebuilt GTM and channel strategy across marketplace, DTC, and partner distribution models</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">STATSports</div>
+                <div class="role">President, North America &amp; LATAM</div>
+                <div class="meta">Feb 2020 – Nov 2022, Chicago</div>
+              </header>
+              <p class="subnote">Leading performance analysis and data-streaming platform for professional sports (acquired by SONY)</p>
+              <ul>
+                <li>Scaled ARR 5× to $25M, expanding U.S. footprint ~80%, ~70% market share across NFL, MLB, MLS, NCAA</li>
+                <li>Structured enterprise partnerships integrating hardware, software, and performance data into team operations</li>
+                <li>Led data licensing and integration partnerships connecting athlete performance data to broadcast, media, and fan engagement platforms</li>
+                <li>Partnered with USSF, NY Yankees, LA Dodgers, NY Mets, Washington Commanders</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">STATSports</div>
+                <div class="role">Chief Revenue Officer</div>
+                <div class="meta">July 2018 – Feb 2020, Newry, N. Ireland</div>
+              </header>
+              <ul>
+                <li>Built global BD and account management organization (60+ people), scaling partner base from ~325 to 950+ organizations</li>
+                <li>Closed multi-year, 7-figure enterprise partnerships with German FA, Manchester United, Qatar FA, World Rugby, India Cricket</li>
+                <li>Designed and scaled a global partner ecosystem across distributors, integrators, and performance consultants</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Canyon Bicycles GmbH</div>
+                <div class="role">Global E-commerce Director</div>
+                <div class="meta">Oct 2015 – May 2018, Koblenz, Germany</div>
+              </header>
+              <p class="subnote">World's largest online DTC bicycle brand</p>
+              <ul>
+                <li>Full P&amp;L ownership, reporting to CEO, CFO, and CMO</li>
+                <li>Grew annual revenue from $190M to $270M (FY15–FY18)</li>
+                <li>Built cross-functional teams of ~30 across own-brand development, purchasing, and merchandising</li>
+                <li>Launched Parts &amp; Accessories division from $1M to $22M in three years</li>
+                <li>Established proprietary Canyon P&amp;A line contributing $9M</li>
+                <li>Achieved +30% YOY new customer acquisition via P&amp;A, 15% lift in repeat purchases</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Chain Reaction Cycles</div>
+                <div class="role">Head of Merchandising &amp; Trading</div>
+                <div class="meta">March 2012 – Oct 2015, Belfast, N. Ireland</div>
+              </header>
+              <p class="subnote">World's largest e-commerce bicycle retailer</p>
+              <ul>
+                <li>Grew total revenues 80%, from $105M to $190M (FY12–FY15)</li>
+                <li>Built and led 25-person global team across merchandising, sourcing, demand planning, and house brands</li>
+                <li>Directed house brand strategy driving 7% of total turnover across 10 brands</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Nike</div>
+                <div class="role">Strategic Account Manager</div>
+                <div class="meta">March 2005 – March 2012, Dublin, Ireland</div>
+              </header>
+              <p class="subnote">Held four strategic sales management roles</p>
+              <ul>
+                <li>Managed strategic wholesale accounts across UK/Ireland for Footwear, Apparel, Equipment, and Running/Soccer specialty</li>
+                <li>Delivered ~40% YOY revenue growth across $1B+ UK/Ireland subsidiary</li>
+                <li>Built account-driven assortments, activation calendars, and multi-season GTM strategies</li>
+              </ul>
+            </article>
+
+            <article class="experience-card reveal-on-scroll">
+              <header class="experience-header">
+                <div class="company">Adidas</div>
+                <div class="role">Assistant Brand Concept Manager</div>
+                <div class="meta">Jan 2001 – Jan 2002, Herzogenaurach, Germany</div>
+              </header>
+              <ul>
+                <li>Supported global brand concept creation and cross-functional alignment across product, creative, and category teams</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <div class="footline">PAUL MCAFEE · EXECUTIVE COMMERCIAL LEADERSHIP</div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const progressBar = document.getElementById("progressBar");
+      const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]:not(.download-btn)'));
+      const sectionEls = navLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      function updateProgress() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+      }
+
+      updateProgress();
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+
+      const revealTargets = document.querySelectorAll(".reveal-on-scroll");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reducedMotion) {
+        revealTargets.forEach((card) => card.classList.add("is-visible"));
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16, rootMargin: "0px 0px -4% 0px" }
+      );
+
+      if (!reducedMotion) {
+        revealTargets.forEach((item) => observer.observe(item));
+      }
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!visible) return;
+          const activeId = "#" + visible.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle("is-active", link.getAttribute("href") === activeId);
+          });
+        },
+        { rootMargin: "-26% 0px -56% 0px", threshold: [0.15, 0.3, 0.5] }
+      );
+
+      sectionEls.forEach((section) => sectionObserver.observe(section));
+    })();
+  </script>
+</body>
+</html>
